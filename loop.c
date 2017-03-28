@@ -1,16 +1,14 @@
 #include<stdio.h>
 int main(){
-int a=0;
-while(a!=8)
-{
- a++;
-}
-printf("hello");
-for(a=0;a<5;a++){
+int b=0;
+    while(b!=8)
+    {
+     b++;
+    }
+    printf("hello");
+    for(b=0;b<5;b++)
+    {
 
-}
-
-
-
-return 0;
+    }
+    return 0;
 }
