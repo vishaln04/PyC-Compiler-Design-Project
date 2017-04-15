@@ -16,7 +16,6 @@
 "/" | "*" | "%" {return OP2;}
 "<" | ">" | ">=" | "<=" | "!=" | "==" {return OP3;}
 "^" {return OP4;}
-
-.  return yytext[0];
+  return yytext[0];
 
 %%
