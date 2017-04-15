@@ -6,6 +6,7 @@
 %token IF FOR WHILE END ELSE COLON SEMICOLON OP1 OP2 OP3 OP4 VARNAME DIGIT INT CHAR
 
 %%
+S : STMTS {printf("Input accepted\n"); exit(0);}
 
 STMTS : STMT ';' | STMT ';' STMTS | CONTROL STMTS ;
 STMT : VAR | EXP ;
@@ -39,6 +40,7 @@ FOR_LOOP : FOR '(' EXP ';' COND ';' EXPR ')' ':' STMTS END ;
 WHILE_LOOP : WHILE '(' COND ')' ':' STMTS END ;
 
 %%
+#include "lex.yy.c"
 int yyerror(char *msg)
 {
 printf("the statement is invalid\n");
