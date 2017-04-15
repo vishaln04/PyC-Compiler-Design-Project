@@ -3,7 +3,7 @@
 #include<stdlib.h>
 %}
 
-%token IF FOR WHILE END ELSE COLON SEMICOLON OP1 OP2 OP3 OP4 VARNAME DIGIT
+%token IF FOR WHILE END ELSE COLON SEMICOLON OP1 OP2 OP3 OP4 VARNAME DIGIT INT CHAR
 
 %%
 
@@ -11,7 +11,7 @@ STMTS : STMT ';' | STMT ';' STMTS | CONTROL STMTS ;
 STMT : VAR | EXP ;
 CONTROL : IF_STMT | FOR_LOOP | WHILE_LOOP ;
 
-DATATYPE : int | char ;
+DATATYPE : INT | CHAR ;
 
 
 VAR : DATATYPE VARNAMES ';' | DATATYPE VARNAME '=' DIGIT ;
@@ -39,15 +39,14 @@ FOR_LOOP : FOR '(' EXP ';' COND ';' EXPR ')' ':' STMTS END ;
 WHILE_LOOP : WHILE '(' COND ')' ':' STMTS END ;
 
 %%
-
 int yyerror(char *msg)
 {
 printf("the statement is invalid\n");
 exit(0);
 }
-
 main()
 {
 printf("enter the statement\n");
 yyparse();
 }
+
