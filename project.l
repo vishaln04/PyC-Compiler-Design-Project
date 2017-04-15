@@ -7,7 +7,8 @@
 "for" {return FOR;}
 "end" {return END;}
 "else" {return ELSE;}
-
+"int" {return INT;}
+"char" {return CHAR;}
 [a-zA-Z]+ {return VARNAME;}
 [0-9]+ {return DIGIT;}
 
