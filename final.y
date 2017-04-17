@@ -4,14 +4,15 @@
 extern FILE *fp;
 %}
 
-%token IF FOR WHILE END ELSE COLON SEMICOLON OP1 OP2 OP3 OP4 VARNAME DIGIT INT CHAR PRINTF
-
+%token IF FOR WHILE END ELSE COLON SEMICOLON VARNAME DIGIT INT CHAR PRINTF
+%token P1 P2 P3 P4 P5 P6 P7 P11 P12 P21 P22 P23
 %%
 
 STMTS : STMT ';' 
 	| STMT ';' STMTS 
 	| CONTROL STMTS
 	| PrintFunc 
+	|
 	;
 
 STMT : VAR 
@@ -36,6 +37,7 @@ VARNAMES : VARNAME ',' VARNAMES
 	;
 
 EXP : VARNAME '=' EXPR 
+	| VARNAME '=' id
 	;
 EXPR : EXPR1 EXPR_1 
 	| EXPR1 
@@ -62,20 +64,34 @@ id : VARNAME
 	| DIGIT 
 	;
 
-COND : VALUE OP3 VALUE 
-	;
 PrintFunc : PRINTF '(' EXPR ')' ';'
 	;
 
-IF_STMT : IF '(' COND ')' ':' STMTS END 
+IF_STMT : IF'('COND')' ':' STMTS END 
 	| IF '(' COND ')' ':' STMTS ELSE STMTS END 
 	;
-
+COND : VALUE OP3 VALUE 
+	;
 VALUE : VARNAME 
 	| DIGIT 
 	;
-
-FOR_LOOP : FOR '(' EXP ';' COND ';' EXPR ')' ':' STMTS END 
+OP3 : P1
+	| P2
+	| P3
+	| P4
+	| P5
+	| P6
+	;
+OP1 : P11
+	| P12
+	;
+OP2 : P21
+	| P22
+	| P23
+	;
+OP4 : P7
+	;
+FOR_LOOP : FOR '(' EXP ';' COND ';' EXP ')' ':' STMTS END 
 	;
 
 WHILE_LOOP : WHILE '(' COND ')' ':' STMTS END 
