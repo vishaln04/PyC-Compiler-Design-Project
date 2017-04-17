@@ -1,19 +1,44 @@
+int k,lm,lm;
+int k=4;
+a=5;
+if(a==b):
+	a=5;
+if(a==b):
+	a=5;
+end
+if(a==b):
+	a=5;
+else
+	if(a==b):
+	a=5;
+end
+end
+end
 
-void main()
-{
-	int k=5;
-	int l;
-	float a=8;
-	for(l=0;l<5;l=l+1)
-	{
-		printf(hello);
-	}
-	while(i>0)
-	{
-		printf(hi);
-		i=i-1;
-	}
-	if(k==5)
-		print(ok);	
-	
-}
+
+for(a=1;a<b;a=a+1):
+	a=4;
+if(a==b):
+	a=5;
+else
+	if(a==b):
+	a=5;
+end
+end
+end
+while(a>b):
+	for(a=1;a<b;a=a+1):
+	a=4;
+if(a==b):
+	a=5;
+else
+	if(a==b):
+	a=5;
+end
+end
+end
+	int a=5;
+end
+
+
+
