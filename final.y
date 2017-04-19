@@ -2,21 +2,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 extern FILE *fp;
+int exitFlag=0;
+int value[52];
+int declared[52];
+int valueSet[52];
+int type[52];
+int val;
 %}
 
 %token IF FOR WHILE END ELSE COLON SEMICOLON VARNAME DIGIT INT CHAR PRINTF
 %token P1 P2 P3 P4 P5 P6 P7 P11 P12 P21 P22 P23
 %%
 
-STMTS : STMT ';' 
-	| STMT ';' STMTS 
-	| CONTROL STMTS
-	| PrintFunc 
+STMTS : STMT ';' {;}
+	| STMT ';' STMTS  {;} 
+	| CONTROL STMTS   {;}
+	| PrintFunc       {;}
 	|
 	;
 
-STMT : VAR 
-	| EXP 
+STMT : VAR            {$$=$1;}
+	| EXP 			  {$$=$1;}
 	;
 
 CONTROL : IF_STMT 
@@ -24,44 +30,44 @@ CONTROL : IF_STMT
 	| WHILE_LOOP 
 	;
 
-DATATYPE : INT 
-	| CHAR 
+DATATYPE : INT 		  {;}
+	| CHAR 			  {;}
 	;
 
-VAR : DATATYPE VARNAMES
-	| DATATYPE VARNAME '=' DIGIT 
+VAR : DATATYPE VARNAMES				{;}				
+	| DATATYPE VARNAME '=' DIGIT 	{;}
 	;
 
-VARNAMES : VARNAME ',' VARNAMES 
-	| VARNAME 
+VARNAMES : VARNAME ',' VARNAMES 	{;}
+	| VARNAME 						{;}
 	;
 
-EXP : VARNAME '=' EXPR 
-	| VARNAME '=' id
+EXP : VARNAME '=' EXPR 				{$1=$3; $$=$1; printf("Final Value is : %d\n",$3);}
+	| VARNAME '=' id 				{$1=$3; $$=$1; printf("Final Value is : %d\n",$3);}
 	;
-EXPR : EXPR1 EXPR_1 
-	| EXPR1 
+EXPR : EXPR1 {val=$1;} EXPR_1 		{$$ = $3;printf("Value of EXPR is : %d\n",$3);}
+	| EXPR1 						{$$=$1;printf("Value of EXPR is : %d\n",$$);}
 	;
-EXPR_1 : OP1 EXPR1 EXPR_1 
-	| OP1 EXPR1 
+EXPR_1 : OP1 EXPR1 EXPR_1 			{$$=$3 + $2;printf("Value of EXPR_1 is : %d\n",$$);}
+	| OP1 EXPR1 					{$$=val + $2;printf("Value of EXPR_1 is : %d\n",$$);}
 	;
-EXPR1 : EXPR2 EXPR1_1 
-	| EXPR2 
+EXPR1 : EXPR2 EXPR1_1 				{;}
+	| EXPR2 						{$$=$1;printf("Value of EXPR1 is : %d\n",$1);}
 	;
-EXPR1_1 : OP2 EXPR2 EXPR1_1 
-	| OP2 EXPR2 
+EXPR1_1 : OP2 EXPR2 EXPR1_1 		{;}
+	| OP2 EXPR2 					{;}
 	; 
-EXPR2 : EXPR3 EXPR2_1
-	| EXPR3 
+EXPR2 : EXPR3 EXPR2_1				{;}
+	| EXPR3 						{$$=$1;printf("Value of EXPR2 is : %d\n",$1);}
 	;
-EXPR2_1 : OP4 EXPR3 EXPR2_1
-	| OP4 EXPR3 
+EXPR2_1 : OP4 EXPR3 EXPR2_1			{;}
+	| OP4 EXPR3 					{;}
 	;
-EXPR3 : '(' EXPR ')' 
-	| id
+EXPR3 : '(' EXPR ')' 				{$$=$2;}
+	| id 							{$$=$1;printf("Value of EXPR3 is : %d\n",$1);}
 	;
-id : VARNAME 
-	| DIGIT 
+id : VARNAME 						{$$=$1;printf("Value of Variable is : %d\n",$1);}
+	| DIGIT 						{$$=$1;printf("Value of Digit is : %d\n",$1);}
 	;
 
 PrintFunc : PRINTF '(' EXPR ')' ';'
@@ -72,25 +78,25 @@ IF_STMT : IF'('COND')' ':' STMTS END
 	;
 COND : VALUE OP3 VALUE 
 	;
-VALUE : VARNAME 
-	| DIGIT 
+VALUE : VARNAME 					{$$=$1;}
+	| DIGIT 						{$$=$1;}
 	;
-OP3 : P1
-	| P2
-	| P3
-	| P4
-	| P5
-	| P6
+OP3 : P1 							{$$='<';}
+	| P2 							{$$='>';}
+	| P3 							{$$='>=';}
+	| P4 							{$$='<=';}
+	| P5 							{$$='!=';}
+	| P6 							{$$='==';}
 	;
-OP1 : P11
-	| P12
+OP1 : P11 							{$$='+';}
+	| P12 							{$$='-';}
 	;
-OP2 : P21
-	| P22
-	| P23
+OP2 : P21 							{$$='/';}
+	| P22 							{$$='*';}
+	| P23 							{$$='%';}
 	;
-OP4 : P7
-	;
+OP4 : P7 							{$$='^';}
+
 FOR_LOOP : FOR '(' EXP ';' COND ';' EXP ')' ':' STMTS END 
 	;
 
