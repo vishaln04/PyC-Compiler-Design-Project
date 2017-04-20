@@ -1,6 +1,7 @@
 %{
 #include <stdio.h>
 #include <stdlib.h>
+#include<math.h>
 extern FILE *fp;
 int exitFlag=0;
 int value[52];
@@ -75,7 +76,7 @@ EXPR_1 : OP1 EXPR1 EXPR_1 			{
 										}
 									}
 	;
-EXPR1 : EXPR2 {val=$1;} EXPR1_1 	{$$ = $3;printf("Value of EXPR is : %d\n",$3);}
+EXPR1 : EXPR2 {val=$1;} EXPR1_1 	{$$ = $3;printf("Value of EXPR1 is : %d\n",$3);}
 	| EXPR2 						{$$=$1;printf("Value of EXPR1 is : %d\n",$1);}
 	;
 EXPR1_1 : OP2 EXPR2 EXPR1_1 		{
@@ -113,11 +114,19 @@ EXPR1_1 : OP2 EXPR2 EXPR1_1 		{
 										}
 									}
 	; 
-EXPR2 : EXPR3 EXPR2_1				{;}
+EXPR2 : EXPR3 {val = $1;} EXPR2_1	{$$ = $3;printf("Value of EXPR2 is : %d\n",$3);}
 	| EXPR3 						{$$=$1;printf("Value of EXPR2 is : %d\n",$1);}
 	;
-EXPR2_1 : OP4 EXPR3 EXPR2_1			{;}
-	| OP4 EXPR3 					{;}
+EXPR2_1 : OP4 EXPR3 EXPR2_1			{	
+										$$=pow($3, $2);
+										printf("Value of EXPR_1 is : %d\n",$$);
+										printf("Operator Value is %c\n",$1);
+									}
+	| OP4 EXPR3 					{
+										$$=pow(val, $2);
+										printf("Value of EXPR_1 is : %d\n",$$);
+										printf("Operator Value is %c\n",$1);
+									}
 	;
 EXPR3 : '(' EXPR ')' 				{$$=$2;}
 	| id 							{$$=$1;printf("Value of EXPR3 is : %d\n",$1);}
