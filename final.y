@@ -48,8 +48,30 @@ EXP : VARNAME '=' EXPR 				{$1=$3; $$=$1; printf("Final Value is : %d\n",$3);}
 EXPR : EXPR1 {val=$1;} EXPR_1 		{$$ = $3;printf("Value of EXPR is : %d\n",$3);}
 	| EXPR1 						{$$=$1;printf("Value of EXPR is : %d\n",$$);}
 	;
-EXPR_1 : OP1 EXPR1 EXPR_1 			{$$=$3 + $2;printf("Value of EXPR_1 is : %d\n",$$);}
-	| OP1 EXPR1 					{$$=val + $2;printf("Value of EXPR_1 is : %d\n",$$);}
+EXPR_1 : OP1 EXPR1 EXPR_1 			{
+										if($1=='+'){
+											$$=$3 + $2;
+											printf("Value of EXPR_1 is : %d\n",$$);
+											printf("Operator Value is %c\n",$1);
+										}
+										else{
+											$$=$3 - $2;
+											printf("Value of EXPR_1 is : %d\n",$$);
+											printf("Operator Value is %c\n",$1);
+										}
+									}
+	| OP1 EXPR1 					{
+										if($1=='+'){
+											$$=val + $2;
+											printf("Value of EXPR_1 is : %d\n",$$);
+											printf("Operator Value is %c\n",$1);
+										}
+										else{
+											$$=val - $2;
+											printf("Value of EXPR_1 is : %d\n",$$);
+											printf("Operator Value is %c\n",$1);
+										}
+									}
 	;
 EXPR1 : EXPR2 EXPR1_1 				{;}
 	| EXPR2 						{$$=$1;printf("Value of EXPR1 is : %d\n",$1);}
