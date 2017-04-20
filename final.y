@@ -12,6 +12,8 @@ int val;
 
 %token IF FOR WHILE END ELSE COLON SEMICOLON VARNAME DIGIT INT CHAR PRINTF
 %token P1 P2 P3 P4 P5 P6 P7 P11 P12 P21 P22 P23
+%left '+' '-'
+%left '*' '/' '%'
 %%
 
 STMTS : STMT ';' {;}
@@ -73,11 +75,43 @@ EXPR_1 : OP1 EXPR1 EXPR_1 			{
 										}
 									}
 	;
-EXPR1 : EXPR2 EXPR1_1 				{;}
+EXPR1 : EXPR2 {val=$1;} EXPR1_1 	{$$ = $3;printf("Value of EXPR is : %d\n",$3);}
 	| EXPR2 						{$$=$1;printf("Value of EXPR1 is : %d\n",$1);}
 	;
-EXPR1_1 : OP2 EXPR2 EXPR1_1 		{;}
-	| OP2 EXPR2 					{;}
+EXPR1_1 : OP2 EXPR2 EXPR1_1 		{
+										if($1=='*'){
+											$$=$3 * $2;
+											printf("Value of EXPR_1 is : %d\n",$$);
+											printf("Operator Value is %c\n",$1);
+										}
+										else if($1=='/'){
+											$$=$3 / $2;
+											printf("Value of EXPR_1 is : %d\n",$$);
+											printf("Operator Value is %c\n",$1);
+										}
+										else {
+											$$=$3 % $2;
+											printf("Value of EXPR_1 is : %d\n",$$);
+											printf("Operator Value is %c\n",$1);
+										}
+									}
+	| OP2 EXPR2 					{
+										if($1=='*'){
+											$$=val * $2;
+											printf("Value of EXPR_1 is : %d\n",$$);
+											printf("Operator Value is %c\n",$1);
+										}
+										else if($1=='/'){
+											$$=val / $2;
+											printf("Value of EXPR_1 is : %d\n",$$);
+											printf("Operator Value is %c\n",$1);
+										}
+										else {
+											$$=val % $2;
+											printf("Value of EXPR_1 is : %d\n",$$);
+											printf("Operator Value is %c\n",$1);
+										}
+									}
 	; 
 EXPR2 : EXPR3 EXPR2_1				{;}
 	| EXPR3 						{$$=$1;printf("Value of EXPR2 is : %d\n",$1);}
