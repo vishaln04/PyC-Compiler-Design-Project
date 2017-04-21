@@ -87,9 +87,15 @@ EXPR1_1 : OP2 EXPR2 EXPR1_1 		{
 											printf("Operator Value is %c\n",$1);
 										}
 										else if($1=='/'){
-											$$=$3 / $2;
-											printf("Value of EXPR_1 is : %d\n",$$);
-											printf("Operator Value is %c\n",$1);
+											if($2!=0){
+												$$=$3 / $2;
+												printf("Value of EXPR_1 is : %d\n",$$);
+												printf("Operator Value is %c\n",$1);
+											}
+											else {
+												printf("\nError: Can't divide by 0\n");
+												exit(1);
+											}
 										}
 										else {
 											$$=$3 % $2;
@@ -104,9 +110,15 @@ EXPR1_1 : OP2 EXPR2 EXPR1_1 		{
 											printf("Operator Value is %c\n",$1);
 										}
 										else if($1=='/'){
-											$$=val / $2;
-											printf("Value of EXPR_1 is : %d\n",$$);
-											printf("Operator Value is %c\n",$1);
+											if($2!=0) {
+												$$=val / $2;
+												printf("Value of EXPR_1 is : %d\n",$$);
+												printf("Operator Value is %c\n",$1);
+											}
+											else {
+												printf("\nError: Can't divide by 0\n");
+												exit(1);
+											}
 										}
 										else {
 											$$=val % $2;

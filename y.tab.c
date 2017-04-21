@@ -62,7 +62,7 @@
 
 
 /* Copy the first part of user declarations.  */
-#line 1 "final.y" /* yacc.c:339  */
+#line 1 "testing.y" /* yacc.c:339  */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -74,8 +74,9 @@ int declared[52];
 int valueSet[52];
 int type[52];
 int val;
+int sym[50];
 
-#line 79 "y.tab.c" /* yacc.c:339  */
+#line 80 "y.tab.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -178,7 +179,7 @@ int yyparse (void);
 
 /* Copy the second part of user declarations.  */
 
-#line 182 "y.tab.c" /* yacc.c:358  */
+#line 183 "y.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -478,12 +479,12 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    20,    20,    21,    22,    23,    24,    27,    28,    31,
-      32,    33,    36,    37,    40,    41,    44,    45,    48,    49,
-      51,    51,    52,    54,    66,    79,    79,    80,    82,    99,
-     117,   117,   118,   120,   125,   131,   132,   134,   135,   138,
-     141,   142,   144,   146,   147,   149,   150,   151,   152,   153,
-     154,   156,   157,   159,   160,   161,   163,   165,   168
+       0,    21,    21,    22,    23,    24,    25,    28,    29,    32,
+      33,    34,    37,    38,    41,    42,    45,    46,    49,    50,
+      52,    52,    53,    55,    67,    80,    80,    81,    83,   106,
+     130,   130,   131,   133,   138,   144,   145,   147,   148,   151,
+     154,   155,   157,   159,   160,   162,   163,   164,   165,   166,
+     167,   169,   170,   172,   173,   174,   176,   178,   181
 };
 #endif
 
@@ -1318,109 +1319,109 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 20 "final.y" /* yacc.c:1646  */
+#line 21 "testing.y" /* yacc.c:1646  */
     {;}
-#line 1324 "y.tab.c" /* yacc.c:1646  */
+#line 1325 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 3:
-#line 21 "final.y" /* yacc.c:1646  */
+#line 22 "testing.y" /* yacc.c:1646  */
     {;}
-#line 1330 "y.tab.c" /* yacc.c:1646  */
+#line 1331 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 4:
-#line 22 "final.y" /* yacc.c:1646  */
+#line 23 "testing.y" /* yacc.c:1646  */
     {;}
-#line 1336 "y.tab.c" /* yacc.c:1646  */
+#line 1337 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 5:
-#line 23 "final.y" /* yacc.c:1646  */
+#line 24 "testing.y" /* yacc.c:1646  */
     {;}
-#line 1342 "y.tab.c" /* yacc.c:1646  */
+#line 1343 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 27 "final.y" /* yacc.c:1646  */
+#line 28 "testing.y" /* yacc.c:1646  */
     {(yyval)=(yyvsp[0]);}
-#line 1348 "y.tab.c" /* yacc.c:1646  */
+#line 1349 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 8:
-#line 28 "final.y" /* yacc.c:1646  */
+#line 29 "testing.y" /* yacc.c:1646  */
     {(yyval)=(yyvsp[0]);}
-#line 1354 "y.tab.c" /* yacc.c:1646  */
+#line 1355 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 12:
-#line 36 "final.y" /* yacc.c:1646  */
+#line 37 "testing.y" /* yacc.c:1646  */
     {;}
-#line 1360 "y.tab.c" /* yacc.c:1646  */
+#line 1361 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 13:
-#line 37 "final.y" /* yacc.c:1646  */
+#line 38 "testing.y" /* yacc.c:1646  */
     {;}
-#line 1366 "y.tab.c" /* yacc.c:1646  */
+#line 1367 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 14:
-#line 40 "final.y" /* yacc.c:1646  */
+#line 41 "testing.y" /* yacc.c:1646  */
     {;}
-#line 1372 "y.tab.c" /* yacc.c:1646  */
+#line 1373 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 15:
-#line 41 "final.y" /* yacc.c:1646  */
+#line 42 "testing.y" /* yacc.c:1646  */
     {;}
-#line 1378 "y.tab.c" /* yacc.c:1646  */
+#line 1379 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 16:
-#line 44 "final.y" /* yacc.c:1646  */
+#line 45 "testing.y" /* yacc.c:1646  */
     {;}
-#line 1384 "y.tab.c" /* yacc.c:1646  */
+#line 1385 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 17:
-#line 45 "final.y" /* yacc.c:1646  */
+#line 46 "testing.y" /* yacc.c:1646  */
     {;}
-#line 1390 "y.tab.c" /* yacc.c:1646  */
+#line 1391 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 18:
-#line 48 "final.y" /* yacc.c:1646  */
-    {(yyvsp[-2])=(yyvsp[0]); (yyval)=(yyvsp[-2]); printf("Final Value is : %d\n",(yyvsp[0]));}
-#line 1396 "y.tab.c" /* yacc.c:1646  */
+#line 49 "testing.y" /* yacc.c:1646  */
+    {(yyval)=sym[(yyvsp[-2])]; sym[(yyvsp[-2])]=(yyvsp[0]); printf("Final Value is : %d\n",(yyvsp[0]));}
+#line 1397 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 19:
-#line 49 "final.y" /* yacc.c:1646  */
-    {(yyvsp[-2])=(yyvsp[0]); (yyval)=(yyvsp[-2]); printf("Final Value is : %d\n",(yyvsp[0]));}
-#line 1402 "y.tab.c" /* yacc.c:1646  */
+#line 50 "testing.y" /* yacc.c:1646  */
+    {(yyval)=sym[(yyvsp[-2])]; sym[(yyvsp[-2])]=(yyvsp[0]); printf("Final Value is : %d\n",(yyvsp[0]));}
+#line 1403 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 20:
-#line 51 "final.y" /* yacc.c:1646  */
+#line 52 "testing.y" /* yacc.c:1646  */
     {val=(yyvsp[0]);}
-#line 1408 "y.tab.c" /* yacc.c:1646  */
+#line 1409 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 21:
-#line 51 "final.y" /* yacc.c:1646  */
+#line 52 "testing.y" /* yacc.c:1646  */
     {(yyval) = (yyvsp[0]);printf("Value of EXPR is : %d\n",(yyvsp[0]));}
-#line 1414 "y.tab.c" /* yacc.c:1646  */
+#line 1415 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 22:
-#line 52 "final.y" /* yacc.c:1646  */
+#line 53 "testing.y" /* yacc.c:1646  */
     {(yyval)=(yyvsp[0]);printf("Value of EXPR is : %d\n",(yyval));}
-#line 1420 "y.tab.c" /* yacc.c:1646  */
+#line 1421 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 23:
-#line 54 "final.y" /* yacc.c:1646  */
+#line 55 "testing.y" /* yacc.c:1646  */
     {
 										if((yyvsp[-2])=='+'){
 											(yyval)=(yyvsp[0]) + (yyvsp[-1]);
@@ -1433,11 +1434,11 @@ yyreduce:
 											printf("Operator Value is %c\n",(yyvsp[-2]));
 										}
 									}
-#line 1437 "y.tab.c" /* yacc.c:1646  */
+#line 1438 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 24:
-#line 66 "final.y" /* yacc.c:1646  */
+#line 67 "testing.y" /* yacc.c:1646  */
     {
 										if((yyvsp[-1])=='+'){
 											(yyval)=val + (yyvsp[0]);
@@ -1450,29 +1451,29 @@ yyreduce:
 											printf("Operator Value is %c\n",(yyvsp[-1]));
 										}
 									}
-#line 1454 "y.tab.c" /* yacc.c:1646  */
+#line 1455 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 25:
-#line 79 "final.y" /* yacc.c:1646  */
+#line 80 "testing.y" /* yacc.c:1646  */
     {val=(yyvsp[0]);}
-#line 1460 "y.tab.c" /* yacc.c:1646  */
+#line 1461 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 26:
-#line 79 "final.y" /* yacc.c:1646  */
+#line 80 "testing.y" /* yacc.c:1646  */
     {(yyval) = (yyvsp[0]);printf("Value of EXPR1 is : %d\n",(yyvsp[0]));}
-#line 1466 "y.tab.c" /* yacc.c:1646  */
+#line 1467 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 27:
-#line 80 "final.y" /* yacc.c:1646  */
+#line 81 "testing.y" /* yacc.c:1646  */
     {(yyval)=(yyvsp[0]);printf("Value of EXPR1 is : %d\n",(yyvsp[0]));}
-#line 1472 "y.tab.c" /* yacc.c:1646  */
+#line 1473 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 28:
-#line 82 "final.y" /* yacc.c:1646  */
+#line 83 "testing.y" /* yacc.c:1646  */
     {
 										if((yyvsp[-2])=='*'){
 											(yyval)=(yyvsp[0]) * (yyvsp[-1]);
@@ -1480,9 +1481,15 @@ yyreduce:
 											printf("Operator Value is %c\n",(yyvsp[-2]));
 										}
 										else if((yyvsp[-2])=='/'){
-											(yyval)=(yyvsp[0]) / (yyvsp[-1]);
-											printf("Value of EXPR_1 is : %d\n",(yyval));
-											printf("Operator Value is %c\n",(yyvsp[-2]));
+											if((yyvsp[-1])!=0){
+												(yyval)=(yyvsp[0]) / (yyvsp[-1]);
+												printf("Value of EXPR_1 is : %d\n",(yyval));
+												printf("Operator Value is %c\n",(yyvsp[-2]));
+											}
+											else {
+												printf("\nError: Can't divide by 0\n");
+												exit(1);
+											}
 										}
 										else {
 											(yyval)=(yyvsp[0]) % (yyvsp[-1]);
@@ -1490,11 +1497,11 @@ yyreduce:
 											printf("Operator Value is %c\n",(yyvsp[-2]));
 										}
 									}
-#line 1494 "y.tab.c" /* yacc.c:1646  */
+#line 1501 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 29:
-#line 99 "final.y" /* yacc.c:1646  */
+#line 106 "testing.y" /* yacc.c:1646  */
     {
 										if((yyvsp[-1])=='*'){
 											(yyval)=val * (yyvsp[0]);
@@ -1502,9 +1509,15 @@ yyreduce:
 											printf("Operator Value is %c\n",(yyvsp[-1]));
 										}
 										else if((yyvsp[-1])=='/'){
-											(yyval)=val / (yyvsp[0]);
-											printf("Value of EXPR_1 is : %d\n",(yyval));
-											printf("Operator Value is %c\n",(yyvsp[-1]));
+											if((yyvsp[0])!=0) {
+												(yyval)=val / (yyvsp[0]);
+												printf("Value of EXPR_1 is : %d\n",(yyval));
+												printf("Operator Value is %c\n",(yyvsp[-1]));
+											}
+											else {
+												printf("\nError: Can't divide by 0\n");
+												exit(1);
+											}
 										}
 										else {
 											(yyval)=val % (yyvsp[0]);
@@ -1512,157 +1525,157 @@ yyreduce:
 											printf("Operator Value is %c\n",(yyvsp[-1]));
 										}
 									}
-#line 1516 "y.tab.c" /* yacc.c:1646  */
+#line 1529 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 30:
-#line 117 "final.y" /* yacc.c:1646  */
+#line 130 "testing.y" /* yacc.c:1646  */
     {val = (yyvsp[0]);}
-#line 1522 "y.tab.c" /* yacc.c:1646  */
+#line 1535 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 31:
-#line 117 "final.y" /* yacc.c:1646  */
+#line 130 "testing.y" /* yacc.c:1646  */
     {(yyval) = (yyvsp[0]);printf("Value of EXPR2 is : %d\n",(yyvsp[0]));}
-#line 1528 "y.tab.c" /* yacc.c:1646  */
+#line 1541 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 32:
-#line 118 "final.y" /* yacc.c:1646  */
+#line 131 "testing.y" /* yacc.c:1646  */
     {(yyval)=(yyvsp[0]);printf("Value of EXPR2 is : %d\n",(yyvsp[0]));}
-#line 1534 "y.tab.c" /* yacc.c:1646  */
+#line 1547 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 33:
-#line 120 "final.y" /* yacc.c:1646  */
+#line 133 "testing.y" /* yacc.c:1646  */
     {	
 										(yyval)=pow((yyvsp[0]), (yyvsp[-1]));
 										printf("Value of EXPR_1 is : %d\n",(yyval));
 										printf("Operator Value is %c\n",(yyvsp[-2]));
 									}
-#line 1544 "y.tab.c" /* yacc.c:1646  */
+#line 1557 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 34:
-#line 125 "final.y" /* yacc.c:1646  */
+#line 138 "testing.y" /* yacc.c:1646  */
     {
 										(yyval)=pow(val, (yyvsp[0]));
 										printf("Value of EXPR_1 is : %d\n",(yyval));
 										printf("Operator Value is %c\n",(yyvsp[-1]));
 									}
-#line 1554 "y.tab.c" /* yacc.c:1646  */
+#line 1567 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 35:
-#line 131 "final.y" /* yacc.c:1646  */
+#line 144 "testing.y" /* yacc.c:1646  */
     {(yyval)=(yyvsp[-1]);}
-#line 1560 "y.tab.c" /* yacc.c:1646  */
+#line 1573 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 36:
-#line 132 "final.y" /* yacc.c:1646  */
+#line 145 "testing.y" /* yacc.c:1646  */
     {(yyval)=(yyvsp[0]);printf("Value of EXPR3 is : %d\n",(yyvsp[0]));}
-#line 1566 "y.tab.c" /* yacc.c:1646  */
+#line 1579 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 37:
-#line 134 "final.y" /* yacc.c:1646  */
-    {(yyval)=(yyvsp[0]);printf("Value of Variable is : %d\n",(yyvsp[0]));}
-#line 1572 "y.tab.c" /* yacc.c:1646  */
+#line 147 "testing.y" /* yacc.c:1646  */
+    {(yyval)=sym[(yyvsp[0])];printf("Value of Variable is : %d\n",sym[(yyvsp[0])]);}
+#line 1585 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 38:
-#line 135 "final.y" /* yacc.c:1646  */
+#line 148 "testing.y" /* yacc.c:1646  */
     {(yyval)=(yyvsp[0]);printf("Value of Digit is : %d\n",(yyvsp[0]));}
-#line 1578 "y.tab.c" /* yacc.c:1646  */
+#line 1591 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 43:
-#line 146 "final.y" /* yacc.c:1646  */
+#line 159 "testing.y" /* yacc.c:1646  */
     {(yyval)=(yyvsp[0]);}
-#line 1584 "y.tab.c" /* yacc.c:1646  */
+#line 1597 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 44:
-#line 147 "final.y" /* yacc.c:1646  */
+#line 160 "testing.y" /* yacc.c:1646  */
     {(yyval)=(yyvsp[0]);}
-#line 1590 "y.tab.c" /* yacc.c:1646  */
+#line 1603 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 45:
-#line 149 "final.y" /* yacc.c:1646  */
+#line 162 "testing.y" /* yacc.c:1646  */
     {(yyval)='<';}
-#line 1596 "y.tab.c" /* yacc.c:1646  */
+#line 1609 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 46:
-#line 150 "final.y" /* yacc.c:1646  */
+#line 163 "testing.y" /* yacc.c:1646  */
     {(yyval)='>';}
-#line 1602 "y.tab.c" /* yacc.c:1646  */
+#line 1615 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 47:
-#line 151 "final.y" /* yacc.c:1646  */
+#line 164 "testing.y" /* yacc.c:1646  */
     {(yyval)='>=';}
-#line 1608 "y.tab.c" /* yacc.c:1646  */
+#line 1621 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 48:
-#line 152 "final.y" /* yacc.c:1646  */
+#line 165 "testing.y" /* yacc.c:1646  */
     {(yyval)='<=';}
-#line 1614 "y.tab.c" /* yacc.c:1646  */
+#line 1627 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 49:
-#line 153 "final.y" /* yacc.c:1646  */
+#line 166 "testing.y" /* yacc.c:1646  */
     {(yyval)='!=';}
-#line 1620 "y.tab.c" /* yacc.c:1646  */
+#line 1633 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 50:
-#line 154 "final.y" /* yacc.c:1646  */
+#line 167 "testing.y" /* yacc.c:1646  */
     {(yyval)='==';}
-#line 1626 "y.tab.c" /* yacc.c:1646  */
+#line 1639 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 51:
-#line 156 "final.y" /* yacc.c:1646  */
+#line 169 "testing.y" /* yacc.c:1646  */
     {(yyval)='+';}
-#line 1632 "y.tab.c" /* yacc.c:1646  */
+#line 1645 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 52:
-#line 157 "final.y" /* yacc.c:1646  */
+#line 170 "testing.y" /* yacc.c:1646  */
     {(yyval)='-';}
-#line 1638 "y.tab.c" /* yacc.c:1646  */
+#line 1651 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 53:
-#line 159 "final.y" /* yacc.c:1646  */
+#line 172 "testing.y" /* yacc.c:1646  */
     {(yyval)='/';}
-#line 1644 "y.tab.c" /* yacc.c:1646  */
+#line 1657 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 54:
-#line 160 "final.y" /* yacc.c:1646  */
+#line 173 "testing.y" /* yacc.c:1646  */
     {(yyval)='*';}
-#line 1650 "y.tab.c" /* yacc.c:1646  */
+#line 1663 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 55:
-#line 161 "final.y" /* yacc.c:1646  */
+#line 174 "testing.y" /* yacc.c:1646  */
     {(yyval)='%';}
-#line 1656 "y.tab.c" /* yacc.c:1646  */
+#line 1669 "y.tab.c" /* yacc.c:1646  */
     break;
 
   case 56:
-#line 163 "final.y" /* yacc.c:1646  */
+#line 176 "testing.y" /* yacc.c:1646  */
     {(yyval)='^';}
-#line 1662 "y.tab.c" /* yacc.c:1646  */
+#line 1675 "y.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 1666 "y.tab.c" /* yacc.c:1646  */
+#line 1679 "y.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1890,7 +1903,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 171 "final.y" /* yacc.c:1906  */
+#line 184 "testing.y" /* yacc.c:1906  */
 
 #include"lex.yy.c"
 #include<ctype.h>
