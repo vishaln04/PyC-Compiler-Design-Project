@@ -3,7 +3,8 @@ digit [0-9]
 
 %%
 [ \t]		;
-[ \n]   { yylineno = yylineno + 1;}
+[ \n]   { yylineno = yylineno + 1;};
+main return MAIN;
 int	return INT;
 char return CHAR;
 for 	return FOR;

@@ -50,25 +50,24 @@ extern int yydebug;
     WHILE = 260,
     END = 261,
     ELSE = 262,
-    COLON = 263,
-    SEMICOLON = 264,
-    VARNAME = 265,
-    DIGIT = 266,
-    INT = 267,
-    CHAR = 268,
-    PRINTF = 269,
-    P1 = 270,
-    P2 = 271,
-    P3 = 272,
-    P4 = 273,
-    P5 = 274,
-    P6 = 275,
-    P7 = 276,
-    P11 = 277,
-    P12 = 278,
-    P21 = 279,
-    P22 = 280,
-    P23 = 281
+    VARNAME = 263,
+    DIGIT = 264,
+    INT = 265,
+    CHAR = 266,
+    PRINTF = 267,
+    MAIN = 268,
+    P1 = 269,
+    P2 = 270,
+    P3 = 271,
+    P4 = 272,
+    P5 = 273,
+    P6 = 274,
+    P7 = 275,
+    P11 = 276,
+    P12 = 277,
+    P21 = 278,
+    P22 = 279,
+    P23 = 280
   };
 #endif
 /* Tokens.  */
@@ -77,25 +76,24 @@ extern int yydebug;
 #define WHILE 260
 #define END 261
 #define ELSE 262
-#define COLON 263
-#define SEMICOLON 264
-#define VARNAME 265
-#define DIGIT 266
-#define INT 267
-#define CHAR 268
-#define PRINTF 269
-#define P1 270
-#define P2 271
-#define P3 272
-#define P4 273
-#define P5 274
-#define P6 275
-#define P7 276
-#define P11 277
-#define P12 278
-#define P21 279
-#define P22 280
-#define P23 281
+#define VARNAME 263
+#define DIGIT 264
+#define INT 265
+#define CHAR 266
+#define PRINTF 267
+#define MAIN 268
+#define P1 269
+#define P2 270
+#define P3 271
+#define P4 272
+#define P5 273
+#define P6 274
+#define P7 275
+#define P11 276
+#define P12 277
+#define P21 278
+#define P22 279
+#define P23 280
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED

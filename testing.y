@@ -12,11 +12,14 @@ int val;
 int sym[50];
 %}
 
-%token IF FOR WHILE END ELSE COLON SEMICOLON VARNAME DIGIT INT CHAR PRINTF
+%token IF FOR WHILE END ELSE VARNAME DIGIT INT CHAR PRINTF MAIN
 %token P1 P2 P3 P4 P5 P6 P7 P11 P12 P21 P22 P23
 %left '+' '-'
 %left '*' '/' '%'
 %%
+
+PROGRAM : MAIN'('')'':' STMTS END
+		;
 
 STMTS : STMT ';' {;}
 	| STMT ';' STMTS  {;} 
